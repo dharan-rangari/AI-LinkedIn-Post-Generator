@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface text-gray-800 antialiased;
+  scroll-behavior: smooth;
+}
+
+/* Thin, unobtrusive scrollbar for the app shell */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 8px;
+}
+
+/* Reusable card surface used across the dashboard */
+.app-card {
+  @apply bg-white rounded-2xl shadow-card border border-gray-100 transition-shadow duration-300;
+}
+
+.app-card:hover {
+  @apply shadow-card-hover;
+}
+
+/* Page fade-in used for route transitions */
+.page-enter {
+  @apply animate-fadeIn;
+}
